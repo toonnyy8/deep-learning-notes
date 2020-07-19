@@ -11,3 +11,5 @@
 
 #### 缺點：
 * **記憶體使用量過大**，受硬體設備限制了其關注距離。
+
+#### [更多...](https://toonnyy8.github.io/deep-learning-notes/attention-is-all-you-need/)
