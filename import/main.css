@@ -152,3 +152,11 @@ li:after {
     top: 0;
     left: 0;
 }
+
+img {
+    padding: 0rem;
+    margin: 0rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
