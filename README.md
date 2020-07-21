@@ -3,7 +3,7 @@
 
 | 主題 | 連結 |
 | ---- | ----|
-| Attention Is All You Need | [link](./attention-is-all-you-need/) |
+| Attention Is All You Need | [未完成](./attention-is-all-you-need/) |
 | GAN | 預定 |
 | RNN | 預定 |
 | LSTM | 預定 |
