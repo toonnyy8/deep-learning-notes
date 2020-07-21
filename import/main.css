@@ -1,6 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 
+* {
+    scrollbar-color: #fbf1c788 #fbf1c733;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fbf1c733;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fbf1c788;
+}
+
 body {
     font-family: "Source Code Pro", "Noto Sans TC", sans-serif;
     background-color: #252525;
