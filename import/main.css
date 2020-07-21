@@ -7,7 +7,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 0.5rem;
 }
 
 /* Track */
@@ -27,13 +27,13 @@ body {
     font-size: 1rem;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
     body {
         margin-left: 15%;
         margin-right: 15%;
     }
 }
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 900px) {
     body {
         margin-left: 20%;
         margin-right: 20%;
@@ -257,4 +257,33 @@ td {
 }
 .text-3xl {
     font-size: 2.2rem;
+}
+.math {
+    overflow-y: hidden;
+    overflow-x: auto;
+    text-align: center;
+}
+.math-lg {
+    height: 5rem;
+    width: auto;
+}
+.math-xl {
+    height: 6rem;
+    width: auto;
+}
+.math-2xl {
+    height: 7rem;
+    width: auto;
+}
+.math-3xl {
+    height: 8rem;
+    width: auto;
+}
+.math-4xl {
+    height: 9rem;
+    width: auto;
+}
+.math-5xl {
+    height: 10rem;
+    width: auto;
 }
