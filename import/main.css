@@ -126,7 +126,7 @@ blockquote > blockquote {
     margin: 0;
 }
 
-blockquote:after {
+blockquote::after {
     color: #98971a;
     font-weight: bold;
     content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
@@ -189,12 +189,12 @@ li {
     line-height: 1.5rem;
 }
 
-ul > li:after {
+ul > li::after {
     content: "-";
     font-weight: bold;
 }
 
-li:after {
+li::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -317,4 +317,10 @@ pre code {
     font-family: "Source Code Pro", "Noto Sans TC", sans-serif;
     border-left: 0.1rem #fbf1c788 solid;
     padding-left: 1.15rem !important;
+}
+
+ul.directory > li::after {
+    content: "+";
+    font-weight: bold;
+    color: #ff2e88;
 }

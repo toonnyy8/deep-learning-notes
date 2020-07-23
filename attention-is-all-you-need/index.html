@@ -11,8 +11,22 @@
 <body>
     <!-- <div class="container"> -->
     <h1><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a></h1>
+    <ul class="directory">
+        <li>
+            <a href="#簡介">簡介</a>
+        </li>
+        <li>
+            <a href="#架構">架構</a>
+        </li>
+        <li>
+            <a href="#在翻譯任務的訓練與使用方式">在翻譯任務的訓練與使用方式</a>
+        </li>
+        <li>
+            <a href="#實驗">實驗</a>
+        </li>
+    </ul>
     <div class="block">
-        <h2>簡介</h2>
+        <h2 id="簡介">簡介</h2>
         <div class="block">
             <p>
                 在 2017 年，由 self attention 構成的新模型 Transformer 被提出。<br />
@@ -30,7 +44,14 @@
             </ul>
         </div>
 
-        <h2>架構</h2>
+        <h2 id="架構">架構</h2>
+        <ul class="directory">
+            <li><a href="#Multi-Head-Self-Attention">Multi Head Self Attention</a></li>
+            <li><a href="#Input-&-Target">Input & Target</a></li>
+            <li><a href="#Embedding">Embedding</a></li>
+            <li><a href="#Positional-Encoding">Positional Encoding</a></li>
+            <li><a href="#Encoders-&-Decoders">Encoders & Decoders</a></li>
+        </ul>
         <div class="block">
             <div class="block">
                 <p>
@@ -44,7 +65,7 @@
                 </p>
             </div>
 
-            <h3>Multi Head Self Attention</h3>
+            <h3 id="Multi-Head-Self-Attention">Multi Head Self Attention</h3>
             <div class="block">
                 <div class="block">
                     <p>
@@ -176,10 +197,10 @@
                 </div>
             </div>
 
-            <h3>Input & Target</h3>
+            <h3 id="Input-&-Target">Input & Target</h3>
             <div class="block"></div>
 
-            <h3>Embedding</h3>
+            <h3 id="Embedding">Embedding</h3>
             <div class="block">
                 <a href="./img/word-vector-space_clip.mp4">
                     <video class="w-5/6 m-auto" autoplay="" muted="" loop="" data-paused-by-reveal="">
@@ -189,7 +210,7 @@
                 <a href="./img/embedding_2.png"><img src="./img/embedding_2.png" alt="Transformer 架構圖" /></a>
             </div>
 
-            <h3>Positional Encoding</h3>
+            <h3 id="Positional-Encoding">Positional Encoding</h3>
             <div class="block">
                 <p>
                     在全部由 Self Attention 構成的 Transformer 中，<strong>無法</strong>做到如同 RNN 與 CNN 那樣自然的掌握位置資訊。<br />
@@ -221,20 +242,51 @@
                 </blockquote>
             </div>
 
-            <h3>Encoders & Decoders</h3>
+            <h3 id="Encoders-&-Decoders">Encoders & Decoders</h3>
             <div class="block">
-                <a href="./img/encoders-decoders.png"><img src="./img/encoders-decoders.png"
-                        alt="Encoders & Decoders 由多個 encoder layer 與 decoder layer 組成" /></a>
-                <h4>Encoder Layer</h4>
-                <a href="./img/encoder-layer.png"><img src="./img/encoder-layer.png" alt="Encoder" /></a>
-                <h4>Decoder Layer</h4>
-                <a href="./img/decoder-layer.png"><img src="./img/decoder-layer.png" alt="Encoder" /></a>
+                <div class="block">
+                    <a href="./img/encoders-decoders.png"><img src="./img/encoders-decoders.png"
+                            alt="Encoders & Decoders 由多個 encoder layer 與 decoder layer 組成" /></a>
+                </div>
+                <h4 id="Encoder-Layer">Encoder Layer</h4>
+                <div class="block">
+                    <a href="./img/encoder-layer.png"><img src="./img/encoder-layer.png" alt="Encoder" /></a>
+                </div>
+                <h4 id="Decoder-Layer">Decoder Layer</h4>
+                <div class="block">
+                    <a href="./img/decoder-layer.png"><img src="./img/decoder-layer.png" alt="Encoder" /></a>
+                </div>
             </div>
         </div>
 
-        <h2>實驗</h2>
+        <h2 id="在翻譯任務的訓練與使用方式">在翻譯任務的訓練與使用方式</h2>
+        <ul class="directory">
+            <li><a href="#訓練">訓練</a></li>
+            <li><a href="#使用方式">使用方式</a></li>
+        </ul>
         <div class="block">
-            <h3>基本模型</h3>
+            <h3 id="訓練">訓練</h3>
+            <div class="block">
+                <a href="./img/black_box.png"><img src="./img/black_box.png"
+                        alt="Transformer 的輸入有兩個，一個是 Input、另一個是 Target，而輸出的詞字數量則會與 Target 相同" /></a>
+            </div>
+            <h3 id="使用方式">使用方式</h3>
+            <div class="block">
+                <a href="./img/usage.png"><img src="./img/usage.png" alt="" /></a>
+            </div>
+        </div>
+
+        <h2 id="實驗">實驗</h2>
+        <ul class="directory">
+            <li><a href="#基本模型">基本模型</a></li>
+            <li><a href="#實驗-A">實驗 A</a></li>
+            <li><a href="#實驗-B">實驗 B</a></li>
+            <li><a href="#實驗-C">實驗 C</a></li>
+            <li><a href="#實驗-D">實驗 D</a></li>
+            <li><a href="#實驗-E">實驗 E</a></li>
+        </ul>
+        <div class="block">
+            <h3 id="基本模型">基本模型</h3>
             <div class="block">
                 <a href="./img/experiment-base.png"><img src="./img/experiment-base.png" alt="Transformer 架構圖" /></a>
                 <table>
@@ -272,28 +324,28 @@
                     </tr>
                 </table>
             </div>
-            <h3>實驗 A</h3>
-            <p>
-                在固定的 d<sub>model</sub> 下，<strong>增加</strong> Head 的數量對<strong>提升正確率</strong>是有幫助的，<br />
-                但是，<br />
-                當<strong>過量增加</strong>時反而會抑制單一 Head 的表達能力，<strong>使正確率開始下降</strong>。
-            </p>
+            <h3 id="實驗-A">實驗 A</h3>
             <div class="block">
+                <p>
+                    在固定的 d<sub>model</sub> 下，<strong>增加</strong> Head 的數量對<strong>提升正確率</strong>是有幫助的，<br />
+                    但是，<br />
+                    當<strong>過量增加</strong>時反而會抑制單一 Head 的表達能力，<strong>使正確率開始下降</strong>。
+                </p>
                 <a href="./img/experiment-a.png"><img src="./img/experiment-a.png" alt="Transformer 架構圖" /></a>
             </div>
-            <h3>實驗 B</h3>
+            <h3 id="實驗-B">實驗 B</h3>
             <div class="block">
                 <a href="./img/experiment-b.png"><img src="./img/experiment-b.png" alt="Transformer 架構圖" /></a>
             </div>
-            <h3>實驗 C</h3>
+            <h3 id="實驗-C">實驗 C</h3>
             <div class="block">
                 <a href="./img/experiment-c.png"><img src="./img/experiment-c.png" alt="Transformer 架構圖" /></a>
             </div>
-            <h3>實驗 D</h3>
+            <h3 id="實驗-D">實驗 D</h3>
             <div class="block">
                 <a href="./img/experiment-d.png"><img src="./img/experiment-d.png" alt="Transformer 架構圖" /></a>
             </div>
-            <h3>實驗 E</h3>
+            <h3 id="實驗-E">實驗 E</h3>
             <div class="block">
                 <a href="./img/experiment-e.png"><img src="./img/experiment-e.png" alt="Transformer 架構圖" /></a>
             </div>
