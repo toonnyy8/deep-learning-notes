@@ -105,7 +105,7 @@ h6::before {
 }
 
 blockquote {
-    color: #4cacc4;
+    color: #69d3ee;
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -272,18 +272,18 @@ td {
     width: auto;
 }
 .math-2xl {
-    height: 7rem;
-    width: auto;
-}
-.math-3xl {
     height: 8rem;
     width: auto;
 }
+.math-3xl {
+    height: 10rem;
+    width: auto;
+}
 .math-4xl {
-    height: 9rem;
+    height: 12rem;
     width: auto;
 }
 .math-5xl {
-    height: 10rem;
+    height: 14rem;
     width: auto;
 }
