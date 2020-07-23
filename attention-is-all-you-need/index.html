@@ -191,8 +191,34 @@
 
             <h3>Positional Encoding</h3>
             <div class="block">
+                <p>
+                    在全部由 Self Attention 構成的 Transformer 中，<strong>無法</strong>做到如同 RNN 與 CNN 那樣自然的掌握位置資訊。<br />
+                    但是處理序列問題時，<strong>位置資訊又非常重要</strong>，因此使用了 <strong>Positional Encoding</strong>
+                    的方式<strong>手動的將訊息寫進輸入之中</strong>。
+                </p>
+                <p class="math">
+                    <img class="math-sm" src="./math/positional-encoding_0.png"
+                        alt="PositionalEncoding(Input)=Input+PE" />
+                </p>
+                <p>
+                    上式的 <strong>PE</strong> 就是記載著位置資訊的矩陣，其內容如下式：
+                </p>
+                <p class="math">
+                    <img class="math-lg" src="./math/positional-encoding_1.png"
+                        alt="PE[pos,2i]=sin(pos/10000^(2i/d_embedding)),PE[pos,2i+1]=cos(pos/10000^((2i+1)/d_embedding))" />
+                </p>
+                <P>
+                    其中的 <strong>pos</strong> 與 <strong>2i、2i+1</strong> 意義如下：
+                </P>
+                <ul>
+                    <li>pos：句子中的第 pos 個字詞。</li>
+                    <li>2i、2i+1：word embedding 後所得向量的第 n 維。</li>
+                </ul>
                 <a href="./img/positional-encoding.png"><img src="./img/positional-encoding.png"
-                        alt="Transformer 架構圖" /></a>
+                        alt="positional encoding 範例" /></a>
+                <blockquote>
+                    上圖是 50 個字詞、d<sub>embedding</sub> = 10 的 PE 範例
+                </blockquote>
             </div>
 
             <h3>Encoders & Decoders</h3>
