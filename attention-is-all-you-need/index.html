@@ -46,25 +46,134 @@
 
             <h3>Multi Head Self Attention</h3>
             <div class="block">
-                <p>
-                    Multi Head Attention 是由多個 <strong>Scaled Dot Product Attention</strong> 組成。<br />
-                    每個 Scaled Dot Product Attention 會計算出不同的 <strong>Head</strong>，<br />
-                    Head 就像是 CNN 的 <strong>Feature Map</strong> 一樣，<br />
-                    各 Head 具有自己關注的特徵，從越多方面取得特徵便能獲得更好的效果。
-                </p>
-                <a href="./img/multi-head-attention.png"><img src="./img/multi-head-attention.png"
-                        alt="Transformer 架構圖" /></a>
+                <div class="block">
+                    <p>
+                        Multi Head Attention 是由多個 <strong>Scaled Dot Product Attention</strong> 組成。<br />
+                        每個 Scaled Dot Product Attention 會計算出不同的 <strong>Head</strong>，<br />
+                        Head 就像是 CNN 的 <strong>Feature Map</strong> 一樣，<br />
+                        各 Head 具有自己關注的特徵，從越多方面取得特徵便能獲得更好的效果。
+                    </p>
+                    <a href="./img/multi-head-attention.png"><img src="./img/multi-head-attention.png"
+                            alt="Transformer 架構圖" /></a>
+                </div>
                 <h4>Scaled Dot Product Attention</h4>
-                <p class="math">
-                    <img class="math-2xl" src="./math/scale-dot-product-attention.png"
-                        alt="Attention(Q,K,V)=Softmax((Q*K^T)/(depth_k^0.5))*V" />
-                </p>
-                <p class="math">
-                    <img class="math-3xl" src="./math/QKV.png"
-                        alt="Attention(Q,K,V)=Softmax((Q*K^T)/(depth_k^0.5))*V" />
-                </p>
-                <p>先計算</p>
+                <div class="block">
+                    Attention Function 如下式
+                    <p class="math">
+                        <img class="math-xl" src="./math/scale-dot-product-attention.png"
+                            alt="Attention(Q,K,V)=Softmax((Q*K^T)/(depth_k^0.5))*V" />
+                    </p>
+                    <p>其中</p>
+                    <p class="math">
+                        <img class="math-2xl" src="./math/QKV.png"
+                            alt="Attention(Q,K,V)=Softmax((Q*K^T)/(depth_k^0.5))*V" />
+                    </p>
+                    <p>
+                        <strong>Q<sub>in</sub></strong>/<strong>K<sub>in</sub></strong>/<strong>V<sub>in</sub></strong>
+                        矩陣都是由一句話傳換成的詞向量。<br />
+                        而其中 <strong>K<sub>in</sub> 與 V<sub>in</sub> 是相同的矩陣</strong>。
+                    </p>
+                    <p>
+                        大小分別為：
+                    <ul>
+                        <li>Q<sub>in</sub>：length Q x d<sub>embedding</sub></li>
+                        <li>K<sub>in</sub>：length K x d<sub>embedding</sub></li>
+                        <li>V<sub>in</sub>：length K x d<sub>embedding</sub></li>
+                    </ul>
+                    </p>
+                    <a href="./img/k_input-v_input-q_input.png">
+                        <img src="./img/k_input-v_input-q_input.png" alt="Transformer 架構圖" />
+                    </a>
+                    <blockquote>
+                        上圖為 Q<sub>in</sub>、K<sub>in</sub>、V<sub>in</sub> 的例子
+                    </blockquote>
+                    <p>
+                        Q<sub>in</sub>/K<sub>in</sub>/V<sub>in</sub> 經過各自的線性轉換後變成
+                        <strong>Q</strong>/<strong>K</strong>/<strong>V</strong>
+                        矩陣：
+                    </p>
+                    <a href="./img/attention-pre-linear.png">
+                        <img src="./img/attention-pre-linear.png" alt="Transformer 架構圖" />
+                    </a>
+                    <p>
+                        另外，<strong>Q</strong>/<strong>K</strong>/<strong>V</strong> 轉換完後的大小分別為
+                    <ul>
+                        <li>Q：length Q x d<sub>k</sub></li>
+                        <li>K：length K x d<sub>k</sub></li>
+                        <li>V：length K x d<sub>v</sub></li>
+                    </ul>
+                    </p>
+                    <p>
+                        轉換完成後就進入 Attention Function。<br />
+                        利用內積計算 Q 的每個向量與 K 的每個向量的相似程度，若向量夾角越小，便會得到較大的內積，<br />
+                        因此先將 Q 與 K 的轉置矩陣 K^T 相乘得出 QK 舉陣：<br />
+                        (等同計算 Q 的每個向量與 K 的每個向量的內積)
+                    </p>
+                    <a href="./img/Scaled-Dot-Product-Attention/0.png">
+                        <img src="./img/Scaled-Dot-Product-Attention/0.png" alt="Transformer 架構圖" />
+                    </a>
+                    <p>
+                        再將 QK 矩陣除以 d<sub>k</sub>^0.5 後帶入 Softmax 得到注意力權重：<br />
+                        (除以 d<sub>k</sub>^0.5 是為了避免注意力權重只剩下接近 0 與 1
+                        的數值，如果沒有進行縮放會使計算所得之梯度非常小，造成梯度消失而無法更新權重。)
+                    </p>
+                    <a href="./img/Scaled-Dot-Product-Attention/1.png">
+                        <img src="./img/Scaled-Dot-Product-Attention/1.png" alt="Transformer 架構圖" />
+                    </a>
+                    <p>
+                        計算出注意力權重後，便可利用 V 來建立出 Head：
+                    </p>
+                    <a href="./img/Scaled-Dot-Product-Attention/2.png">
+                        <img src="./img/Scaled-Dot-Product-Attention/2.png" alt="Transformer 架構圖" />
+                    </a>
+                </div>
                 <h4>Multi Head</h4>
+                <div class="block">
+                    <p class="math">
+                        <img class="math-4xl" src="./math/multi-head-attention.png"
+                            alt="Attention(Q,K,V)=Softmax((Q*K^T)/(depth_k^0.5))*V" />
+                    </p>
+                    <p>
+                        Multi Head Attention 就是將多個 Scaled Dot Product Attention 的結果串聯後經過一次線性轉換。<br />
+                        線性轉換後的大小為 <strong>length Q x d<sub>embedding</sub></strong>，與輸入的 Q<sub>in</sub> 大小一致。
+                    </p>
+                    <a href="./img/Multi-Head-Attention/0.png">
+                        <img src="./img/Multi-Head-Attention/0.png" alt="Transformer 架構圖" />
+                    </a>
+                </div>
+                <h4>在向量空間中的意義</h4>
+                <div class="block">
+                    <a href="./img/QKV/0.png">
+                        <img src="./img/QKV/0.png" alt="Transformer 架構圖" />
+                    </a>
+                    <a href="./img/QKV/1.png">
+                        <img src="./img/QKV/1.png" alt="Transformer 架構圖" />
+                    </a>
+                    <a href="./img/QKV/2.png">
+                        <img src="./img/QKV/2.png" alt="Transformer 架構圖" />
+                    </a>
+                    <a href="./img/QKV/3.png">
+                        <img src="./img/QKV/3.png" alt="Transformer 架構圖" />
+                    </a>
+                    <a href="./img/QKV/4.png">
+                        <img src="./img/QKV/4.png" alt="Transformer 架構圖" />
+                    </a>
+                    <a href="./img/QKV/5.png">
+                        <img src="./img/QKV/5.png" alt="Transformer 架構圖" />
+                    </a>
+                    <a href="./img/QKV/6.png">
+                        <img src="./img/QKV/6.png" alt="Transformer 架構圖" />
+                    </a>
+                    <a href="./img/QKV/7.png">
+                        <img src="./img/QKV/7.png" alt="Transformer 架構圖" />
+                    </a>
+                    <a href="./img/QKV/8.png">
+                        <img src="./img/QKV/8.png" alt="Transformer 架構圖" />
+                    </a>
+                    <a href="./img/QKV/9.png">
+                        <img src="./img/QKV/9.png" alt="Transformer 架構圖" />
+                    </a>
+                </div>
             </div>
 
             <h3>Input & Target</h3>
