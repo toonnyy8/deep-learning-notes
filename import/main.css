@@ -287,3 +287,31 @@ td {
     height: 14rem;
     width: auto;
 }
+
+/* code {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 1rem;
+    font-family: "Source Code Pro", "Noto Sans TC", sans-serif;
+    border-left: 0.1rem #fbf1c788 solid;
+    padding-left: 1.15rem;
+} */
+*:not(pre) > code {
+    font-family: "Source Code Pro", "Noto Sans TC", sans-serif;
+    color: #b8bb27;
+}
+*:not(pre) > code::before {
+    content: " `";
+    color: #fbf1c7;
+}
+*:not(pre) > code::after {
+    content: "` ";
+    color: #fbf1c7;
+}
+pre code {
+    font-family: "Source Code Pro", "Noto Sans TC", sans-serif;
+    border-left: 0.1rem #fbf1c788 solid;
+    padding-left: 1.15rem !important;
+}
