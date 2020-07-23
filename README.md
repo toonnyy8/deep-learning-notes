@@ -1,4 +1,4 @@
-# deep-learning-notes
+# [deep-learning-notes](https://toonnyy8.github.io/deep-learning-notes/)
 深度學習筆記
 
 | 主題 | 連結 |
