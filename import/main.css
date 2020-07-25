@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 
+:root {
+    --left-side-width: 4.2rem;
+    --right-side-width: 0.5rem;
+}
+
 * {
     scrollbar-color: #fbf1c788 #fbf1c733;
     scrollbar-width: thin;
@@ -25,24 +30,32 @@ body {
     background-color: #252525;
     color: #fbf1c7;
     font-size: 1rem;
+    margin-left: var(--left-side-width);
+    margin-right: var(--right-side-width);
 }
 
+@media screen and (max-width: 800px) {
+    :root {
+        --left-side-width: 4.7rem;
+        --right-side-width: 0.5rem;
+    }
+}
 @media screen and (min-width: 800px) {
-    body {
-        margin-left: 15%;
-        margin-right: 15%;
+    :root {
+        --left-side-width: 15%;
+        --right-side-width: 15%;
     }
 }
 @media screen and (min-width: 900px) {
-    body {
-        margin-left: 20%;
-        margin-right: 20%;
+    :root {
+        --left-side-width: 20%;
+        --right-side-width: 20%;
     }
 }
 @media screen and (min-width: 1000px) {
-    body {
-        margin-left: 25%;
-        margin-right: 25%;
+    :root {
+        --left-side-width: 25%;
+        --right-side-width: 25%;
     }
 }
 h1,
@@ -74,31 +87,49 @@ blockquote > h6 {
     /* margin-bottom: 1.5rem; */
 }
 
+h1 {
+    margin-left: -1.2rem;
+}
 h1::before {
     content: "# ";
     color: #fb492f;
 }
 
+h2 {
+    margin-left: -1.8rem;
+}
 h2::before {
     content: "## ";
     color: #fb492f;
 }
 
+h3 {
+    margin-left: -2.4rem;
+}
 h3::before {
     content: "### ";
     color: #fb492f;
 }
 
+h4 {
+    margin-left: -3rem;
+}
 h4::before {
     content: "#### ";
     color: #fb492f;
 }
 
+h5 {
+    margin-left: -3.6rem;
+}
 h5::before {
     content: "##### ";
     color: #fb492f;
 }
 
+h6 {
+    margin-left: -4.2rem;
+}
 h6::before {
     content: "###### ";
     color: #fb492f;
