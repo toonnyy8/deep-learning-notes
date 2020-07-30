@@ -245,12 +245,47 @@
             <h3 id="Encoders-&-Decoders">Encoders & Decoders</h3>
             <div class="block">
                 <div class="block">
+                    <p>
+                        Encoders Decoders 是 Transformer 的核心區塊，<br />
+                        他們個別由多層的 Encoder Layer 與 Decoder Layer 相疊而成，<br />
+                        每層都具有各自的可訓練權重。
+                    </p>
+                    <p>
+                        當 Input 經過 Encoders 後，就會做為 Decoders 的 K/V ，將 Input 的資訊傳遞過去。
+                    </p>
                     <a href="./img/encoders-decoders.png"><img src="./img/encoders-decoders.png"
                             alt="Encoders & Decoders 由多個 encoder layer 與 decoder layer 組成" /></a>
+
                 </div>
                 <h4>Encoder Layer</h4>
                 <div class="block">
                     <a href="./img/encoder-layer.png"><img src="./img/encoder-layer.png" alt="Encoder" /></a>
+                    <p>
+                        Encoder Layer 中有兩塊主要計算結構，<br />
+                        分別是前面所提及的 <strong>Multi Head Attention</strong><br />
+                        以及由幾層全連接層(中間有使用 ReLU 作為激活函數)組成的 <strong>Feed Forward</strong>。
+                    </p>
+                    <h5>Multi Head Attention</h5>
+                    <div class="block">
+                        <p>
+                            在 Encoder Layer 的 Multi Head Attention 中，會傳入相同的
+                            Q<sub>in</sub>、K<sub>in</sub>、V<sub>in</sub>。
+                        </p>
+                    </div>
+                    <h5>Residual</h5>
+                    <div class="block">
+                        <p>
+                            透過 Residual 的跳接結構可以保留最開始的 Positional Encoding，<br />
+                            因此不必每通過一層 Encoder Layer 就要補上位置資訊，<br />
+                            對於深層的網路也能有效的避免梯度消失。
+                        </p>
+                        <a href="./img/residual.png"><img src="./img/residual.png" alt="residual" /></a>
+                    </div>
+                    <h5>Layer Normalization</h5>
+                    <div class="block">
+                        Layer Normalization 會對每個 Word Embedding Vector 做 <strong>Z 分數標準化</strong>，<br />
+                        使其平均值 = 0、標準差 = 1，然後將標準化的結果與一組縮放、偏移權重做計算，便是 Layer Normalization 的最後答案。
+                    </div>
                 </div>
                 <h4>Decoder Layer</h4>
                 <div class="block">
