@@ -289,7 +289,36 @@
                 </div>
                 <h4>Decoder Layer</h4>
                 <div class="block">
-                    <a href="./img/decoder-layer.png"><img src="./img/decoder-layer.png" alt="Encoder" /></a>
+                    <a href="./img/decoder-layer.png"><img src="./img/decoder-layer.png" alt="Decoder Layer" /></a>
+                    <p>
+                        Decoder Layer 與 Encoder Layer 的結構其實很相似，<br />
+                        兩者主要的差異是 Decoder Layer 利用了 Mask 來防止網路偷看未來的資訊。
+                    </p>
+                    <h5>Masked Multi Head Attention</h5>
+                    <div class="block">
+                        <p>
+                            Masked Multi Head Attention 的作法就是在 Dot Product Attention 計算出 QK 矩陣後，<br />
+                            為其要遮蔽的區域加上一個極大的負值。<br />
+                            如此一來，在經過 softmax 後，Mask 的地方就接近於 0，達到遮蔽的效果。
+                        </p>
+                        <a href="./img/masking.png"><img src="./img/masking.png" alt="masking" /></a>
+                        <a href="./img/masking-softmax.png"><img src="./img/masking-softmax.png"
+                                alt="masking-softmax" /></a>
+                        <a href="./img/masking-example.png"><img src="./img/masking-example.png"
+                                alt="masking-example" /></a>
+                        <p>
+                            如上圖所表示，第一個詞「注意力」就只能關注到自己，<br />
+                            而到最後的「所」則可以取得到前幾個詞的應對關係。
+                        </p>
+                    </div>
+                    <h5>Multi Head Attention</h5>
+                    <div class="block">
+                        <p>
+                            在第二段 Multi Head Attention 重點在於其 K<sub>in</sub> 與 V<sub>in</sub>
+                            是來自於 Encoders 最後的輸出結果，<br />
+                            這讓 Decoder 能夠充分將「關注上下文抽取出的 Input 資訊」與「前文關注抽取出的 Target 資訊」混合起來的，好得到最終結果。
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
