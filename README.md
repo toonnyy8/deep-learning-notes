@@ -24,6 +24,7 @@
 | A3C | 預定 |
 | DDPG | 預定 |
 | World Models | 預定 |
+| Incorporating Symbolic Sequential Modeling for Speech Enhancement | 預定 |
 
 *以上所標註的「預定」只代表近期會去閱讀並記錄筆記，並沒有排定先後順序。*  
 
