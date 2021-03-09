@@ -5,7 +5,9 @@
 | ---- | ----|
 | Attention Is All You Need | [未完成](./attention-is-all-you-need/) |
 | GAN | 預定 |
+| Wasserstein GAN | 預定 |
 | RNN | 預定 |
+| Adaptive-Computation-Time RNN | 預定 |
 | LSTM | 預定 |
 | GRU | 預定 |
 | VQ-VAE | 預定 |
@@ -15,6 +17,7 @@
 | Universal Transformers | 預定 |
 | Transformer-XL | 預定 |
 | XLNet | 預定 |
+| Compressive Transformer | 預定 |
 | GameGAN | 預定 |
 | DQN | 預定 |
 | Double DQN | 預定 |
@@ -30,6 +33,9 @@
 | D4PG | 預定 |
 | NeRF | 預定 |
 | NeRF in the Wild | 預定 |
+| High-Performance Large-Scale Image Recognition Without Normalization | 預定 |
+| ResNet | 預定 |
+| Infinite Nature| 預定 |
 
 *以上所標註的「預定」只代表近期會去閱讀並記錄筆記，並沒有排定先後順序。*  
 
