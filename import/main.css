@@ -260,7 +260,7 @@ table {
     margin-top: 1rem;
     margin-bottom: 1rem;
     width: 100%;
-    color: #eee;
+    color: blanchedalmond;
 
     border-collapse: collapse;
 }
@@ -275,7 +275,7 @@ td {
     padding-bottom: 0.5rem;
     text-align: left;
     border-bottom: 0rem;
-    border-bottom: 0.1rem solid #eee;
+    border-bottom: 0.1rem solid blanchedalmond;
 }
 .text-lg {
     font-size: 1.5rem;

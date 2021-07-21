@@ -36,6 +36,11 @@
 | High-Performance Large-Scale Image Recognition Without Normalization | 預定 |
 | ResNet | 預定 |
 | Infinite Nature| 預定 |
+| Conditional Neural Processes | 預定 |
+| Neural Processes | 預定 |
+| Attentive Neural Processes | 預定 |
+| Balanced Meta-Softmax for Long-Tailed Visual Recognition | 預定 |
+| Glancing Transformer for Non-Autoregressive Neural Machine Translation | 預定 |
 
 *以上所標註的「預定」只代表近期會去閱讀並記錄筆記，並沒有排定先後順序。*  
 
