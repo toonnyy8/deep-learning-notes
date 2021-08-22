@@ -41,6 +41,7 @@
 | Attentive Neural Processes | 預定 |
 | Balanced Meta-Softmax for Long-Tailed Visual Recognition | 預定 |
 | Glancing Transformer for Non-Autoregressive Neural Machine Translation | 預定 |
+| Image Super-Resolution via Iterative Refinement | 預定 |
 
 *以上所標註的「預定」只代表近期會去閱讀並記錄筆記，並沒有排定先後順序。*  
 
