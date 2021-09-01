@@ -43,6 +43,8 @@
 | Glancing Transformer for Non-Autoregressive Neural Machine Translation | 預定 |
 | Image Super-Resolution via Iterative Refinement | 預定 |
 | SDEdit: Image Synthesis and Editing with Stochastic Differential Equations | 預定 |
+| Denoising Diffusion Probabilistic Models | 預定 |
+| A Study on Speech Enhancement Based on Diffusion Probabilistic Model | 預定 |
 
 *以上所標註的「預定」只代表近期會去閱讀並記錄筆記，並沒有排定先後順序。*  
 
