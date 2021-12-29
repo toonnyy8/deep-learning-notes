@@ -47,6 +47,13 @@
 | A Study on Speech Enhancement Based on Diffusion Probabilistic Model | 預定 |
 | Random Feature Attention | 預定 |
 
+- High-Resolution Image Synthesis with Latent Diffusion Models
+- Denoising Diffusion Implicit Models
+- Neural Ordinary Differential Equations
+- Adaptive Checkpoint Adjoint Method for Gradient Estimation in Neural ODE
+- MALI: A memory efficient and reverse accurate integrator for Neural ODEs
+
+
 *以上所標註的「預定」只代表近期會去閱讀並記錄筆記，並沒有排定先後順序。*  
 
 > 這個儲存庫是希望自己能**保持學習新知的熱誠**，而給自己的挑戰與堅持，會盡可能以 1~2 周的速度進行更新。  
